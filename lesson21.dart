@@ -276,7 +276,6 @@ class Tunel {
 // неправильный вид добавки, должно выбрасываться исключение (ошибка не должна молча
 // игнорироваться).
 
-
 void main(List<String> args) {
   Hamburger hamburger = Hamburger();
   hamburger.chooseHamburger();
@@ -285,9 +284,8 @@ void main(List<String> args) {
 }
 
 class Hamburger {
-  int sum = 0;
-  int sum2 = 0;
-
+    int sum2 = 0;
+    int sum = 0;
   void chooseHamburger() {
     print('Добро пожаловать выберите гамбургер');
     print('нажмите кнопку 1: маленький (50 сом, 20 калорий)');
@@ -296,12 +294,12 @@ class Hamburger {
     int userChoose = int.parse(stdin.readLineSync()!);
     switch (userChoose) {
       case 1:
-        print("C вас ${sum += 50 + sum2} сом");
+        print("C вас ${sum += 50} сом");
         break;
 
       case 2:
-        print("C вас ${sum += 100 + sum2} сом");
-
+        print("C вас ${sum += 100} сом");
+      break;
       default:
         chooseHamburger();
     }
@@ -316,16 +314,16 @@ class Hamburger {
     int userChoose = int.parse(stdin.readLineSync()!);
     switch (userChoose) {
       case 1:
-        print("C вас ${sum += 10 + sum2} сом");
+        print("C вас ${sum += 10} сом");
         break;
       case 2:
-        print("C вас ${sum += 20 + sum2} сом");
+        print("C вас ${sum += 20} сом");
         break;
       case 3:
-        print("C вас ${sum += 15 + sum2} сом");
+        print("C вас ${sum += 15} сом");
         break;
       case 4:
-        print("C вас ${sum += 45 + sum2} сом");
+        print("C вас ${sum += 45} сом");
         break;
       default:
         chooseFilling();
@@ -353,17 +351,11 @@ class Hamburger {
       } else {
         chooseSomethingElse();
       }
-    sum = sum2 + sum;  
     } else if (userChoose == 2) {
+      sum = sum2 + sum;
       print('Спасибо за покупку! C вас $sum сом');
     } else {
       chooseSomethingElse();
     }
   }
-
 }
-
-
-
-
-
